@@ -1,0 +1,145 @@
+henweigh:
+ # weighted contributions of each body part to the total encumberance score
+ # These are normalized so the sum is 1
+ helmet_weight: 1.0
+ chestplate_weight: 3.0
+ leggings_weight: 2.0
+ boots_weight: 4.0
+ item_hand_weight: 3.0
+
+ # the speed on a particular terrain type is given by the expression:
+ # S = s * a * (E ^ e)  ----> s = default speed, E = net encumbrance, a & e = constants defined by the terrain type
+ # List material names as given in Material.java in the bukkit source.
+ terrain:
+  default:
+   a: 1.0
+   e: 0.5
+   materials:
+    - ANVIL
+    - BEACON
+    - BED_BLOCK
+    - BIRCH_WOOD_STAIRS
+    - BOOKSHELF
+    - BREWING_STAND
+    - BRICK_STAIRS
+    - BROWN_MUSHROOM
+    - BURNING_FURNACE
+    - CAULDRON
+    - CHEST
+    - COBBLE_WALL
+    - COBBLESTONE
+    - COBBLESTONE_STAIRS
+    - DIAMOND_BLOCK
+    - DISPENSER
+    - DOUBLE_STEP
+    - EMERALD_BLOCK
+    - ENDER_CHEST
+    - ENDER_PORTAL_FRAME
+    - FENCE
+    - FENCE_GATE
+    - FLOWER_POT_ITEM
+    - FURNACE
+    - GLASS
+    - GOLD_BLOCK
+    - ICE
+    - IRON_BLOCK
+    - IRON_FENCE
+    - JUKEBOX
+    - JUNGLE_WOOD_STAIRS
+    - LADDER
+    - LOG
+    - NETHER_BRICK
+    - NETHER_BRICK_STAIRS
+    - NOTE_BLOCK
+    - PISTON_BASE
+    - PISTON_STICKY_BASE
+    - SANDSTONE
+    - SANDSTONE_STAIRS
+    - SMOOTH_BRICK
+    - SMOOTH_STAIRS
+    - SPRUCE_WOOD_STAIRS
+    - STEP
+    - TRAP_DOOR
+    - WOOD
+    - WOOD_PLATE
+    - WOOD_STAIRS
+    - WOOD_STEP
+    - WORKBENCH
+  
+  medium:
+   a: 1.0
+   e: 1.0
+   materials:
+    - COAL_ORE
+    - EMERALD_ORE
+    - ENDER_STONE
+    - GLOWSTONE
+    - GOLD_ORE
+    - IRON_ORE
+    - LAPIS_BLOCK
+    - LAPIS_ORE
+    - MELON_BLOCK
+    - MOSSY_COBBLESTONE
+    - OBSIDIAN
+    - PUMPKIN
+    - REDSTONE_ORE
+    - STONE
+    - WOOL
+
+  slow:
+   a: 0.9
+   e: 1.5
+   materials:
+    - CACTUS
+    - CAKE_BLOCK
+    - DIRT
+    - GRASS
+    - HUGE_MUSHROOM_1
+    - HUGE_MUSHROOM_2
+    - NETHERRACK
+    - SOIL
+
+  very_slow:
+   a: 0.8
+   e: 2.5
+   materials:
+    - BEDROCK
+    - GRAVEL
+    - LEAVES
+    - MYCEL
+    - SAND
+    - SNOW
+    - SNOW_BLOCK
+    - SPONGE
+    - NETHERRACK
+    - CLAY
+
+ # encumbrance given by total inventory count
+ inventory_encumbrance_enabled: true
+ # the number of "free" items a player can carry before getting encumbered
+ min_inventory: 128
+ # the number of items for which encumbrance level will be 0 (can't move)
+ max_inventory: 4000
+
+ # encumbrance given by various armor and tools, list material names as given in Material.java in the bukkit source.
+ # The following special values may also be used
+ # [LEATHER_ARMOR, CHAINMAIL_ARMOR, IRON_ARMOR, GOLD_ARMOR, DIAMOND_ARMOR]
+ # [WOOD_TOOLS, STONE_TOOLS, IRON_TOOLS, GOLD_TOOLS, DIAMOND_TOOLS]
+ # which denote entire classes of tools or armor
+ # encumbrance values should be in the range [0,1] (1 is: unencumbered) (0 is: can't move)
+ armor_encumbrance:
+  LEATHER_ARMOR: 0.95
+  CHAINMAIL_ARMOR: 0.9
+  IRON_ARMOR: 0.7
+  GOLD_ARMOR: 0.3
+  DIAMOND_ARMOR: 0.4
+
+ tool_encumbrance:
+  WOOD_TOOLS: 0.9
+  STONE_TOOLS: 0.6
+  IRON_TOOLS: 0.6
+  GOLD_TOOLS: 0.3
+  DIAMOND_TOOLS: 0.4
+  ENDER_PEARL: 0.1
+  BOW: 0.9
+
